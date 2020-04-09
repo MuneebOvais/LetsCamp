@@ -1,0 +1,17 @@
+#submittedBy, #currentUsername, #commentTime{font-style: italic;}
+#commnterUsername{font-weight: bold;}
+#delete{display: inline;}
+.bg-light{background-color: #f5f5f5!important;}
+body{margin-top: 75px;}
+.formContent{
+    width: 37%;
+    margin: 25px auto;
+}
+.card{margin-bottom: 25px;}
+textarea{resize: none;}
+.jumbotron{padding: 3rem 2rem;}
+@media (max-width: 991px){
+    .formContent{
+        width: 344.094px;
+    }
+}

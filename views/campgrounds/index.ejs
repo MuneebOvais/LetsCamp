@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+    <header class="jumbotron">
+        <h1>Welcome to LetsCamp!</h1>
+        <p class="lead">View our hand-picked camping sites from all over Pakistan!</p>
+        <a class="btn btn-primary" href="/campgrounds/new">Add New Campground</a>
+    </header>
+
+    <div class="row text-center">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="<%= campground.image %>" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= campground.name %></h5>
+                        <a href="campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+<%- include('../partials/footer') %>

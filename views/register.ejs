@@ -1,0 +1,24 @@
+<%- include('./partials/header') %>
+
+    <h1 class="text-center"><span class="border-bottom pb-1">Sign Up</span></h1>
+    <div class="formContent">
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" name="username" placeholder="Username" maxlength="20">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password" minlength="8">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="adminCode" placeholder="Admin Code">
+                <small class="text-muted">Leave blank if not admin</small>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
+            </div>
+        </form>
+        <hr>
+        <a href="/campgrounds">Go Back</a>
+    </div>
+
+<%- include('./partials/footer') %>
