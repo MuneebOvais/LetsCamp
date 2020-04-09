@@ -51,6 +51,6 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT || "1003", function(){
+app.listen(process.env.PORT || "1003", "0.0.0.0", function(){
     console.log("Server started at port 1003");
 });
