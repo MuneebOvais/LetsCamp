@@ -21,42 +21,13 @@ var mongoose=require("mongoose"),
     ];
 function seedDB(){
     //  CLEAR DB
-    // Campground.remove({}, function(err){
-        // Comment.remove({}, function(err){
+    Campground.remove({}, function(err){
+        Comment.remove({}, function(err){
             User.remove({}, function(err){
             });
-        // });
-        // if(err){
-        //     console.log(err)
-        // } else{
-        //     console.log("DB CLEANED");
-        //     //  ADD SEED DATA IN DB
-        //     seeds.forEach(function(seed){
-        //         Campground.create(seed, function(err, createdCampground){
-        //             if(err){
-        //                 console.log(err)
-        //             } else{ 
-        //                 console.log("CAMPGROUND CREATED");
-        //                 //  ADD COMMENTS
-        //                 Comment.create(
-        //                     {
-        //                        text: "Any comment",
-        //                        author: "Any author"
-        //                     }, function(err, createdComment){
-        //                         if(err){
-        //                             console.log(err);
-        //                         } else{
-        //                             createdCampground.comments.push(createdComment);
-        //                             createdCampground.save();
-        //                             console.log("Created a new comment");
-        //                         }
-        //                     }
-        //                 );
-        //             }
-        //         });
-        //     });
-        // }
-    // });
+        })
+        
+    });
 }
 
 module.exports=seedDB;

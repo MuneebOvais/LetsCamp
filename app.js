@@ -23,8 +23,8 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-var url=process.env.DATABASEURL || 'mongodb://localhost:27017/letscamp';
-mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}); //Create and use DB
+var url=process.env.DATABASEURL || 'mongodb://localhost:27017/letscamp'; //connect to mlabs if url exists else locally
+ mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}); //Create and use DB
 
 //MOMENT CONFIGURATION
 app.locals.moment=require("moment");
