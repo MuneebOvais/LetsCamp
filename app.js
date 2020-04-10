@@ -23,10 +23,9 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-// mongoose.connect('mongodb://localhost:27017/letscamp', {useNewUrlParser: true, useUnifiedTopology: true}); //Create and use DB
-// mongoose.connect('mongodb+srv://MuneebOvaisKhan:6027proudubitian@cluster0-fprba.mongodb.net/letscamp', {useNewUrlParser: true, useUnifiedTopology: true});
-// mongoose.connect('mongodb+srv://MuneebOvaisKhan:6027proudubitian@cluster0-fprba.mongodb.net/letscamp?retryWrites=true&w=majority' , {useNewUrlParser: true, useUnifiedTopology: true});
-console.log(process.env.DATABASEURL);
+var url=process.env.DATABASEURL || 'mongodb://localhost:27017/letscamp';
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}); //Create and use DB
+
 //MOMENT CONFIGURATION
 app.locals.moment=require("moment");
 
