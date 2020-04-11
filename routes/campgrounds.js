@@ -44,7 +44,7 @@ router.post("/", middleware.isLoggedIn, upload.single('image'), function(req, re
     cloudinary.v2.uploader.upload(req.file.path, function(err, result) {
       if(err) {
         req.flash('error', err.message);
-        return res.redirect('back');
+        return res.redirect('/campgrounds');
       }
       // add cloudinary url for the image to the campground object under image property
       req.body.campground.image = result.secure_url;
@@ -114,34 +114,6 @@ router.put("/:id", middleware.checkCampgroundOwnership, upload.single('image'), 
             res.redirect("/campgrounds/" + foundCampground._id);
         }
     });
-    // Campground.findById(req.params.id, function(err, foundCampground){
-    //     if(err){
-    //         req.flash("error", "Something went wrong.");
-    //         res.redirect("/campgrounds");
-    //     } else{
-    //         if(req.file){ //if user uploaded any file
-    //             //delete the previous image on cloudinary
-    //             cloudinary.v2.uploader.destroy(foundCampground.imageId, function(err) {
-    //                 if(err){
-    //                     req.flash("error", "Something went wrong.");
-    //                     return res.redirect("/campgrounds");
-    //                 }
-    //                 //now upload new image
-    //                 cloudinary.v2.uploader.upload(req.file.path, function(err, result){
-    //                     if(err){
-    //                         req.flash("error", "Something went wrong.");
-    //                         return res.redirect("/campgrounds");
-    //                     }
-    //                     //associate campground with image
-    //                     foundCampground.image=result.secure_url;
-    //                     foundCampground.imageId=result.public_id;
-    //                 });
-    //             });
-    //         }
-    //         req.flash("success", "Successfully updated.");
-    //         res.redirect("/campgrounds/" + req.params.id);
-    //     }
-    // });
 });
 // DESTROY ROUTE
 router.delete("/:id", middleware.checkCampgroundOwnership, function(req, res){
@@ -172,14 +144,6 @@ router.delete("/:id", middleware.checkCampgroundOwnership, function(req, res){
             }
         }
     });
-    //now delete campground
-    // Campground.findByIdAndRemove(req.params.id, function(err){
-    //     if(err){
-    //         res.redirect("/campgrounds");
-    //     } else {
-    //         res.redirect("/campgrounds");
-    //     }
-    // });
 });
 
 module.exports=router;
