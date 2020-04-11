@@ -15,3 +15,6 @@ textarea{resize: none;}
         width: 344.094px;
     }
 }
+input[type="file"] {
+    display: none;
+}
