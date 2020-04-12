@@ -12,6 +12,6 @@ textarea{resize: none;}
 .jumbotron{padding: 3rem 2rem;}
 @media (max-width: 576px){
     .formContent{
-        width: 344.094px;
+        width: 50%;
     }
 }
