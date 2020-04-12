@@ -15,7 +15,7 @@ textarea{resize: none;}
     .formContent{
         width: 80%;
     }
-    body, .btn, a{font-size: 0.8rem}
+    body, .btn, a{font-size: 0.9rem}
     h4, .h4{font-size: 1.3rem}
     h5, .h5, p, .lead{font-size:1.05rem}
     h1, .h1{font-size: 2.3rem}
