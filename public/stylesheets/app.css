@@ -15,4 +15,5 @@ textarea{resize: none;}
     .formContent{
         width: 80%;
     }
+    body{font-size: 0.7rem}
 }
