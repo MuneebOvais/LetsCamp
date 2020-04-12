@@ -2,7 +2,8 @@
 #commnterUsername{font-weight: bold;}
 #delete{display: inline;}
 .bg-light{background-color: #f5f5f5!important;}
-body{margin-top: 75px;}
+body{margin-top: 75px;
+    font-family: 'Work Sans', sans-serif;}
 .formContent{
     width: 37%;
     margin: 25px auto;
