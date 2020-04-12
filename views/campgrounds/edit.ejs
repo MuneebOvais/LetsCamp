@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-    <h1 class="text-center"><span class="border-bottom pb-1">Create a campground</span></h1>
+    <h1 class="text-center"><span class="border-bottom pb-1">Edit campground</span></h1>
     <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" class="formContent" enctype="multipart/form-data">
         <div class="form-group">
             <input class="form-control" type="text" value="<%= campground.name %>" name="campground[name]" maxlength="30" required>
