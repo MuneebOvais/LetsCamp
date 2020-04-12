@@ -20,3 +20,4 @@ textarea{resize: none;}
     h5, .h5, p, .lead{font-size:1.05rem}
     h1, .h1{font-size: 2.3rem}
 }
+#campgroundName{max-width: 50%}
