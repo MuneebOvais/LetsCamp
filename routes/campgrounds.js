@@ -41,6 +41,7 @@ router.get("/", function(req, res){
 
 //CREATE - add new campground to DB
 router.post("/", middleware.isLoggedIn, upload.single('image'), function(req, res) {
+    //upload file to cloudinary
     cloudinary.v2.uploader.upload(req.file.path, function(err, result) {
       if(err) {
         req.flash('error', err.message);
