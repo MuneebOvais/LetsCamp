@@ -14,8 +14,10 @@
                 <img src="<%= campground.image %>" class="card-img-top">
                 <div class="card-body">
                     <ul class="list-inline">
-                        <h4 class="list-inline-item card-title" id="campgroundName"><%= campground.name %></h4>
-                        <h5 class="list-inline-item card-title float-right" id="rate">Rs.<%= campground.price %>/night</h5>
+                        <div class="row">
+                            <h4 class="col-md-6 list-inline-item card-title" id="campgroundName"><%= campground.name %></h4>
+                            <h5 class="col-md-6 list-inline-item card-title float-right" id="rate">Rs.<%= campground.price %>/night</h5>
+                        </div>
                     </ul>
                     <p class="card-text"><%= campground.description %></p>
                     <p class="card-text"><small id="submittedBy" class="text-muted">Submitted by <%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></small></p>
