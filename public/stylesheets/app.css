@@ -19,5 +19,5 @@ textarea{resize: none;}
     h4, .h4{font-size: 1.3rem}
     h5, .h5, p, .lead{font-size:1.05rem}
     h1, .h1{font-size: 2.3rem}
+    #campgroundName{word-wrap: break-word;}
 }
-#campgroundName{word-wrap: break-word;}
