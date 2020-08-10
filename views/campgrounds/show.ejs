@@ -1,15 +1,7 @@
 <%- include('../partials/header') %>
 
-    <div class="row">
-        <div class="col-md-3">
-            <p class="lead">LetsCamp</p>
-            <ul class="list-group">
-                <li class="list-group-item active">Info 1</li>
-                <li class="list-group-item">Info 2</li>
-                <li class="list-group-item">Info 3</li>
-            </ul>
-        </div>
-        <div class="col-md-9">
+    <div class='row'>
+        <div class="col-md-9" style="margin: auto">
             <div class="card mb-3">
                 <img src="<%= campground.image %>" class="card-img-top">
                 <div class="card-body">
@@ -35,15 +27,16 @@
                 <% campground.comments.forEach(function(comment){ %>
                     <div class="row">
                         <div class="col-md-12">
-                            <span id="commnterUsername"><%= comment.author.username %></span>
+                            <span><%= comment.author.username %></span>
                             <small id="commentTime" class="float-right"><%= moment(comment.createdAt).fromNow() %></small>
-                            <p><%= comment.text%></p>
-                             <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %> <!-- we add currentUser in second condition because if a guest comes to website then currentUser will be null  -->
-                                <a class="btn btn-sm btn-warning" href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">Edit</a>
-                                <form id="delete" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                                    <button class="btn btn-sm btn-danger">Delete</button>
-                                </form>
+                            <p class="font-italic"><%= comment.text%></p>
+                            <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %> <!-- we add currentUser in second condition because if a guest comes to website then currentUser will be null  -->
+                            <a class="btn btn-sm btn-warning" href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                            <form id="delete" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-sm btn-danger">Delete</button>
+                            </form>
                             <% } %>
+                            <hr>
                         </div>
                     </div>
                 <% }) %>
